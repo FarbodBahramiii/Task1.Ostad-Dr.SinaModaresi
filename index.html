@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>صفحه ورود</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:tahoma;
+    background:purple;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+    background:white;
+    width:300px;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:95%;
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:15px;
+    color:green;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h1>👤</h1>
+
+    <h2>فرم ورود</h2>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="نام کاربری">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="رمز عبور">
+
+    <button onclick="saveData()">
+        ذخیره اطلاعات
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function saveData(){
+
+    let username =
+        document.getElementById("username").value;
+
+    let password =
+        document.getElementById("password").value;
+
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    document.getElementById("result").innerHTML =
+        "✅ اطلاعات با موفقیت ذخیره شد";
+
+    console.log("ذخیره شد");
+}
+
+</script>
+
+</body>
+</html>
